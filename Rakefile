@@ -1,3 +1,4 @@
+
 task :environment do
   ENV["ACTIVE_RECORD_ENV"] ||= "development"
   require_relative './config/environment'
@@ -16,7 +17,8 @@ namespace :db do
     end
   end
 end
-
+require 'pry'
 task :console => "db:migrate" do
   Pry.start
 end
+
